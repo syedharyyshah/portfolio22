@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  body {
+    @apply bg-[#0c0c1d];
+    color: lightgrey;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+
+  section {
+    @apply h-screen;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
