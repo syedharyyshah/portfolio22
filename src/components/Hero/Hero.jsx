@@ -72,6 +72,16 @@ const Hero = () => {
             <motion.img className='w-12  ml-56 md:m-0' src={scroll} alt="" animate="scrollButton" variants={textVariants} />
         
             </div>
+
+
+            {/* <motion.div 
+        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
+         variants={sliderVariants}
+         initial="initial"
+         animate="animate"
+         >
+          Web Development Services and Much More...
+        </motion.div> */}
         
              
         <div className="imageContainer absolute object-cover top-24 md:top-0  right-0 z-10  ">
@@ -80,14 +90,7 @@ const Hero = () => {
         
         
 
-        <motion.div 
-        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
-         variants={sliderVariants}
-         initial="initial"
-         animate="animate"
-         >
-          Web Development Services and Much More...
-        </motion.div>
+        
 
 
      
