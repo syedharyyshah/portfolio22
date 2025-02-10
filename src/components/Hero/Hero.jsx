@@ -74,14 +74,14 @@ const Hero = () => {
             </div>
 
 
-            {/* <motion.div 
+            <motion.div 
         className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
          variants={sliderVariants}
          initial="initial"
          animate="animate"
          >
           Web Development Services and Much More...
-        </motion.div> */}
+        </motion.div>
         
              
         <div className="imageContainer absolute object-cover top-24 md:top-0  right-0 z-10  ">
