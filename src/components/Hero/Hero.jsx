@@ -51,7 +51,7 @@ const Hero = () => {
       }}>
 
         
-       <div className="wrapper absolute flex flex-col content-center justify-center w-full md:w-1/2 md:m-24 gap-1 md:gap-6 z-20 ">
+       <div className="wrapper absolute flex flex-col content-center justify-center w-full md:w-1/2 md:m-24 gap-5 md:gap-6 z-20 ">
         <motion.div className="textContainer flex flex-col  text-center md:text-left
           gap-2"
         variants={textVariants} initial="initial" animate="animate">
@@ -69,7 +69,7 @@ const Hero = () => {
                  border-white rounded-lg bg-white text-black font-medium tracking-wide'vriants={textVariants}>Contact </motion.a>
             </motion.div>
 
-            <motion.img className='w-12  ml-56 md:m-0' src={scroll} alt="" animate="scrollButton" variants={textVariants} />
+            <motion.img className='w-12  ml-44 md:m-0' src={scroll} alt="" animate="scrollButton" variants={textVariants} />
         
             </div>
 
@@ -84,7 +84,7 @@ const Hero = () => {
         </motion.div>
         
              
-        <div className="imageContainer absolute object-cover top-24 md:top-0  right-0 z-10  ">
+        <div className="imageContainer absolute object-cover top-56 md:top-0  right-0 z-10  ">
         <img src={copy} alt="" />
         </div>
         

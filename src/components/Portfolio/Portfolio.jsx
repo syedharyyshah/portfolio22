@@ -41,10 +41,10 @@ const Single = ({ item }) => {
 
   return (
     <section>
-      <div className="container flex flex-col sm:flex-row items-center w-full h-full overflow-hidden p-4 md:m-16 sm:p-0">
-        <div className="wrapper max-w-[1200px] w-full h-full flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
+      <div className="container flex flex-col sm:flex-row items-center w-full h-full overflow-hidden p-4  sm:p-0">
+        <div className="wrapper  w-full h-full flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
           <div className="imageContainer flex-1 h-64 sm:h-1/2" ref={ref}>
-            <img className='h-full w-full object-cover m-0 md:ml-5' src={item.img} alt={item.title} />
+            <img className='w-72 md:h-full md:w-full object-cover m-0 md:ml-5' src={item.img} alt={item.title} />
           </div>
           <motion.div className="textContainer flex-1 flex flex-col gap-4 sm:gap-8 items-center sm:items-start text-center sm:text-left"  style={{ y }}>
             <h2 className='text-2xl sm:text-5xl font-semibold  '>{item.title}</h2>

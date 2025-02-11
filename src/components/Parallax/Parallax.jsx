@@ -2,19 +2,17 @@ import React, { useRef } from 'react';
 import mountains from '../../assets/mountains.png';
 import planets from '../../assets/planets.png';
 import stars from '../../assets/stars.png';
-import sun from '../../assets/sun.png'
+import sun from '../../assets/sun.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Parallax = ({ type }) => {
   const ref = useRef();
 
-  // Corrected useScroll destructuring and variable naming
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   });
 
-  // Fixed usage of `useTransform`
   const yText = useTransform(scrollYProgress, [0, 1], ['0%', '500%']);
   const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
@@ -31,44 +29,45 @@ const Parallax = ({ type }) => {
     >
       <motion.h1
         style={{ y: yText }}
-        className="text-white text-5xl md:text-7xl font-bold text-center  relative"
+        className="text-white text-5xl md:text-7xl font-bold text-center relative"
       >
         {type === 'services' ? 'What I Do' : 'What I Did?'}
       </motion.h1>
       <motion.div
-        className="mountains bg-contain bg-no-repeat"
+        className="mountains bg-contain md:bg-cover "
         style={{
           backgroundImage: `url(${mountains})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'bottom',
+          backgroundPosition: 'bottom', // Aligns the image to the bottom
           width: '100%',
-          height: '100%',
+          height: '100%', // Full height
           position: 'absolute',
+          backgroundRepeat:'no-repeat',
           zIndex: 3,
         }}
       ></motion.div>
       <motion.div
-        className="planets  bg-contain bg-no-repeat"
+        className="planets"
         style={{
-          y:yBg,
+          y: yBg,
           backgroundImage: `url(${type === 'services' ? planets : sun})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'bottom',
+          backgroundSize: 'contain', // Change to 'contain'
+          backgroundPosition: 'center', // Center the image
           width: '100%',
-          height: '100%',
+          height: '100%', // Full height
+          backgroundRepeat:'no-repeat',
           position: 'absolute',
           zIndex: 2,
         }}
       ></motion.div>
       <motion.div
-        className="stars  bg-contain bg-no-repeat"
+        className="stars"
         style={{
-          x:yBg,
+          x: yBg,
           backgroundImage: `url(${stars})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'bottom',
+          backgroundSize: 'contain', // Change to 'contain'
+          backgroundPosition: 'center', // Center the image
           width: '100%',
-          height: '100%',
+          height: '100%', // Full height
           position: 'absolute',
           zIndex: 1,
         }}
