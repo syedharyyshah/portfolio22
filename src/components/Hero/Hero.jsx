@@ -75,7 +75,7 @@ const Hero = () => {
 
 
             <motion.div 
-        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
+        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-45px] md:bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
          variants={sliderVariants}
          initial="initial"
          animate="animate"
@@ -84,7 +84,8 @@ const Hero = () => {
         </motion.div>
         
              
-        <div className="imageContainer absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:top-0 md:right-0 md:translate-x-0 md:translate-y-0 z-10 size-[40rem]">
+        <div className="imageContainer absolute top-[60%] left-1/2 transform -translate-x-1/2 
+        -translate-y-1/2 md:top-0 md:right-0 md:translate-x-0 md:translate-y-0 z-10 size-[30rem] md:size-[40rem]">
             <img src={copy} alt="" />
         </div>
 
