@@ -28,7 +28,10 @@ const Parallax = ({ type }) => {
       }}
     >
       <motion.h1
-        style={{ y: yText }}
+        style={{
+           y: yText,
+           zIndex:5,          
+          }}
         className="text-white text-5xl md:text-7xl font-bold text-center relative"
       >
         {type === 'services' ? 'What I Do' : 'What I Did?'}
@@ -37,9 +40,9 @@ const Parallax = ({ type }) => {
         className="mountains bg-contain md:bg-cover "
         style={{
           backgroundImage: `url(${mountains})`,
-          backgroundPosition: 'bottom', // Aligns the image to the bottom
+          backgroundPosition: 'bottom', 
           width: '100%',
-          height: '100%', // Full height
+          height: '100%', 
           position: 'absolute',
           backgroundRepeat:'no-repeat',
           zIndex: 3,
@@ -50,10 +53,10 @@ const Parallax = ({ type }) => {
         style={{
           y: yBg,
           backgroundImage: `url(${type === 'services' ? planets : sun})`,
-          backgroundSize: 'contain', // Change to 'contain'
-          backgroundPosition: 'center', // Center the image
+          backgroundSize: 'contain', 
+          backgroundPosition: 'center', 
           width: '100%',
-          height: '100%', // Full height
+          height: '100%', 
           backgroundRepeat:'no-repeat',
           position: 'absolute',
           zIndex: 2,
