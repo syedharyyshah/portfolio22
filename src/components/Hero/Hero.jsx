@@ -75,7 +75,7 @@ const Hero = () => {
 
 
             <motion.div 
-        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-45px] md:bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
+        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-50px] md:bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
          variants={sliderVariants}
          initial="initial"
          animate="animate"
