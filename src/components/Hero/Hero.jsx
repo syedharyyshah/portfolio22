@@ -63,8 +63,26 @@ const Hero = () => {
         background: 'linear-gradient(180deg, #0c0c1d, #111132)',
       }}
     >
-      {/* Text & Buttons */}
-      <div className="wrapper absolute flex flex-col justify-center w-full sm:w-[90%] md:w-1/2 sm:ml-6 md:ml-24 gap-5 md:gap-6 z-20 top-1/2 -translate-y-1/2">
+      {/* On small screens: Image first */}
+      <div className="md:hidden block w-full h-[40%] relative">
+        <div className="imageContainer absolute bottom-0 left-0 right-0 mx-auto z-10 w-full max-w-[20rem] aspect-square">
+          <motion.img
+            src={vector}
+            alt="Vector background"
+            className="absolute inset-0 w-full h-full object-contain z-0"
+            variants={vectorVariants}
+            animate="animate"
+          />
+          <img
+            src={copy}
+            alt="Main image"
+            className="absolute inset-0 w-full h-full object-contain z-10"
+          />
+        </div>
+      </div>
+
+      {/* Text & Buttons - positioned differently on mobile */}
+      <div className="wrapper flex flex-col justify-center w-full md:w-1/2 md:ml-24 gap-5 md:gap-6 z-20 md:absolute md:top-1/2 md:-translate-y-1/2 mt-4 md:mt-0">
         <motion.div
           className="textContainer flex flex-col text-center md:text-left gap-2"
           variants={textVariants}
@@ -125,8 +143,8 @@ const Hero = () => {
         Web Development Services and Much More...
       </motion.div>
 
-      {/* Vector & Copy Image */}
-      <div className="imageContainer absolute bottom-0 right-0 left-0 md:top-0 md:right-0 md:left-auto mx-auto md:mx-0 z-10 w-[90vw] max-w-[30rem] aspect-square">
+      {/* On larger screens: Image position remains the same */}
+      <div className="hidden md:block imageContainer absolute bottom-0 right-0 left-0 md:top-0 md:right-0 md:left-auto mx-auto md:mx-0 z-10 w-[90vw] max-w-[30rem] aspect-square">
         <motion.img
           src={vector}
           alt="Vector background"
