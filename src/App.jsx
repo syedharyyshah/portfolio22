@@ -9,7 +9,7 @@ import Contact from './components/Contact/Contact'
 const App = () => {
   return (
     <div>
-         <section id='Homepage' className='h-[100vh]'>
+         <section id='Homepage' className=''>
         <Navbar />
         <Hero />
       </section>

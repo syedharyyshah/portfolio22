@@ -1,103 +1,147 @@
-import React from 'react'
-import copy from '../../assets/copy.png'
-import scroll from '../../assets/scroll.png'
-import { motion } from 'framer-motion'
-import cv from '../../assets/Syed Haris Shah CV.pdf' 
+import React from 'react';
+import copy from '../../assets/copy.png';
+import vector from '../../assets/vector.png';
+import scroll from '../../assets/scroll.png';
+import { motion } from 'framer-motion';
+import cv from '../../assets/Syed Haris Shah CV.pdf';
 
 const textVariants = {
-  initial:{
+  initial: {
     x: -500,
-    opacity:0,
+    opacity: 0,
   },
-  animate:{
+  animate: {
     x: 0,
-    opacity:1,
-    transition:{
-      duration:1,
-      staggerChildren:0.1,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
     },
   },
-  scrollButton:{
-    opacity:0,
-    y:10,
-    transition:{
-      duration:2,
-      repeat:Infinity
-    }
-  }
+  scrollButton: {
+    opacity: 0,
+    y: 10,
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: 'reverse',
+    },
+  },
 };
 
-
 const sliderVariants = {
-  initial:{
-    x:0,
+  initial: {
+    x: 0,
   },
-  animate:{
-    x:"-220%",
-    transition:{
-      repeat:Infinity,
-      repeatType:'mirror',
-      duration:20,
+  animate: {
+    x: '-220%',
+    transition: {
+      repeat: Infinity,
+      repeatType: 'mirror',
+      duration: 20,
+    },
+  },
+};
+
+const vectorVariants = {
+  animate: {
+    rotate: -360,
+    transition: {
+      duration: 10,
+      repeat: Infinity,
+      ease: 'linear',
     },
   },
 };
 
 const Hero = () => {
   return (
-    <div className='hero overflow-hidden relative max-w-[1366px]  ' 
-    style={{
+    <div
+      className="hero overflow-hidden relative w-full max-w-screen mx-auto px-4"
+      style={{
         height: 'calc(100vh - 100px)',
         background: 'linear-gradient(180deg, #0c0c1d, #111132)',
-      }}>
-
-        
-       <div className="wrapper absolute flex flex-col content-center justify-center w-full md:w-1/2 md:m-24 gap-5 md:gap-6 z-20 ">
-        <motion.div className="textContainer flex flex-col  text-center md:text-left
-          gap-2"
-        variants={textVariants} initial="initial" animate="animate">
-
-            <motion.h2 className='text-2xl text-[#663399] font-bold
-             tracking-widest 'variants={textVariants}>SYED HARIS SHAH</motion.h2>
-
-            <motion.h1 className='text-3xl md:text-8xl'variants={textVariants}>Front End Web Developer</motion.h1>
+      }}
+    >
+      {/* Text & Buttons */}
+      <div className="wrapper absolute flex flex-col justify-center w-full sm:w-[90%] md:w-1/2 sm:ml-6 md:ml-24 gap-5 md:gap-6 z-20 top-1/2 -translate-y-1/2">
+        <motion.div
+          className="textContainer flex flex-col text-center md:text-left gap-2"
+          variants={textVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <motion.h2
+            className="text-lg sm:text-xl md:text-2xl text-[#663399] font-bold tracking-widest"
+            variants={textVariants}
+          >
+            SYED HARIS SHAH
+          </motion.h2>
+          <motion.h1
+            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white"
+            variants={textVariants}
+          >
+            Front End Web Developer
+          </motion.h1>
         </motion.div>
-            <motion.div className="buttons flex items-center justify-center md:justify-start "variants={textVariants}>
-                <motion.a href={cv} download="Syed_Haris_Shah_CV.pdf" className='px-6  inline-block py-3 p-2 md:p-4 cursor-pointer
-                 mr-4 border border-white rounded-lg bg-transparent text-white font-medium hover:bg-[#663399] hover:text-white
-                   tracking-wide'vriants={textVariants}>Download CV</motion.a>
-                <motion.a href="#Contact" className='px-6 p inline-block py-3 p-2 md:p-4 cursor-pointer border
-                 border-white rounded-lg bg-white text-black font-medium tracking-wide'vriants={textVariants}>Contact </motion.a>
-            </motion.div>
 
-            <motion.img className='w-12  ml-44 md:m-0' src={scroll} alt="" animate="scrollButton" variants={textVariants} />
-        
-            </div>
-
-
-            <motion.div 
-        className="slidingTextContainer absolute w-1/2 text-[50vh] bottom-[-65px] md:bottom-[-120px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
-         variants={sliderVariants}
-         initial="initial"
-         animate="animate"
-         >
-          Web Development Services and Much More...
+        <motion.div
+          className="buttons flex flex-wrap items-center justify-center md:justify-start gap-4"
+          variants={textVariants}
+        >
+          <motion.a
+            href={cv}
+            download="Syed_Haris_Shah_CV.pdf"
+            className="px-6 py-3 border border-white rounded-lg bg-transparent text-white font-medium hover:bg-[#663399] hover:text-white tracking-wide transition"
+            variants={textVariants}
+          >
+            Download CV
+          </motion.a>
+          <motion.a
+            href="#Contact"
+            className="px-6 py-3 border border-white rounded-lg bg-white text-black font-medium tracking-wide transition"
+            variants={textVariants}
+          >
+            Contact
+          </motion.a>
         </motion.div>
-        
-             
-        <div className="imageContainer absolute top-[60%] left-1/2 transform -translate-x-1/2 
-        -translate-y-1/2 md:top-0 md:right-0 md:translate-x-0 md:translate-y-0 z-10 size-[30rem] md:size-[40rem]">
-            <img src={copy} alt="" />
-        </div>
 
-        
-        
+        <motion.img
+          className="w-10 sm:w-12 mx-auto md:mx-0 mt-4"
+          src={scroll}
+          alt="Scroll indicator"
+          animate="scrollButton"
+          variants={textVariants}
+        />
+      </div>
 
-        
+      {/* Sliding Background Text */}
+      <motion.div
+        className="slidingTextContainer absolute w-[200%] text-[15vw] sm:text-[12vw] md:text-[10vw] bottom-[-20px] md:bottom-[-60px] whitespace-nowrap font-bold z-0 text-[#ffffff1a]"
+        variants={sliderVariants}
+        initial="initial"
+        animate="animate"
+      >
+        Web Development Services and Much More...
+      </motion.div>
 
-
-     
+      {/* Vector & Copy Image */}
+      <div className="imageContainer absolute bottom-0 right-0 left-0 md:top-0 md:right-0 md:left-auto mx-auto md:mx-0 z-10 w-[90vw] max-w-[30rem] aspect-square">
+        <motion.img
+          src={vector}
+          alt="Vector background"
+          className="absolute inset-0 w-full h-full object-contain z-0"
+          variants={vectorVariants}
+          animate="animate"
+        />
+        <img
+          src={copy}
+          alt="Main image"
+          className="absolute inset-0 w-full h-full object-contain z-10"
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
