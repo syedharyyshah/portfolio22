@@ -41,23 +41,36 @@ const Single = ({ item }) => {
 
   return (
     <section>
-      <div className="container flex flex-col sm:flex-row items-center w-full h-full overflow-hidden p-4  sm:p-0">
-        <div className="wrapper  w-full h-full flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
-          <div className="imageContainer flex-1 h-64 sm:h-1/2" ref={ref}>
-            <img className='w-72 md:h-full md:w-full object-cover m-0 md:ml-5' src={item.img} alt={item.title} />
+      <div className="container mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+        <div className="wrapper w-full flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-10 lg:gap-12 py-6 sm:py-10">
+          <div
+            className="imageContainer flex-1 w-full max-w-full aspect-[16/10] sm:aspect-[16/10] lg:aspect-[16/9] overflow-hidden rounded-xl shadow-lg"
+            ref={ref}
+          >
+            <img
+              className='w-full h-full object-cover'
+              src={item.img}
+              alt={item.title}
+            />
           </div>
-          <motion.div className="textContainer flex-1 flex flex-col gap-4 sm:gap-8 items-center sm:items-start text-center sm:text-left"  style={{ y }}>
-            <h2 className='text-2xl sm:text-5xl font-semibold  '>{item.title}</h2>
-            <p className='text-gray-300 text-xs sm:text-sm'>{item.desc}</p>
+          <motion.div
+            className="textContainer flex-1 w-full max-w-[680px] flex flex-col gap-3 sm:gap-4 lg:gap-6 items-center sm:items-start text-center sm:text-left px-1 sm:px-0"
+            style={{ y }}
+          >
+            <h2 className='text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight'>
+              {item.title}
+            </h2>
+            <p className='text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-prose'>
+              {item.desc}
+            </p>
             <motion.button
-     onClick={() => window.open(item.link, '_blank')}
-     whileHover={{ scale: 1.1 }}  
-     whileTap={{ scale: 0.9 }}  
-     className='bg-orange-600 cursor-pointer ease-in-out border-none rounded-md p-2 md:p-3
-      w-[150px] md:w-[200px]  md:m-0 text-white font-semibold'
-   >
-  Go Live
-   </motion.button>
+              onClick={() => window.open(item.link, '_blank')}
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.96 }}
+              className='bg-orange-600 cursor-pointer ease-in-out border-none rounded-md px-4 py-2 md:px-5 md:py-3 w-[140px] sm:w-[160px] md:w-[200px] text-white font-semibold'
+            >
+              Go Live
+            </motion.button>
           </motion.div>
         </div>
       </div>
@@ -71,9 +84,9 @@ const Portfolio = () => {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <div className="portfolio relative" ref={ref}>
-      <div className="progress sticky top-0 left-0 pt-4 sm:pt-[50px] text-center text-orange-600 text-xl sm:text-2xl  md:text-5xl">
-        <h1 className='text-3xl sm:text-6xl'>Featured Works</h1>
+    <div className="portfolio relative mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8" ref={ref}>
+      <div className="progress sticky top-0 left-0 pt-4 sm:pt-[50px] text-center text-orange-600">
+        <h1 className='text-3xl sm:text-5xl md:text-6xl font-bold'>Featured Works</h1>
         <motion.div style={{ scaleX }} className="progressBar h-2 sm:h-[10px] bg-white"></motion.div>
       </div>
       {items.map((item) => (
