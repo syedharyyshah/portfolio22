@@ -5,14 +5,20 @@ import proj33 from '../../assets/proj33.jpg';
 import proj44 from '../../assets/proj44.jpg';
 import proj55 from '../../assets/proj55.jpg';
 import proj66 from '../../assets/proj66.jpg';
+import sehatkor from '../../assets/sehatkor.jpg';
+import kcd from '../../assets/kcd.jpg';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 const items = [
   { id: 1,
-    title: 'Shop',
-    img: proj11, desc: ' an e-commerce web application I built with React, providing a modern and responsive online shopping experience.',
-    link:'https://dukaan-henna.vercel.app/' },
+    title: 'sehatkor',
+    img: sehatkor, desc: ' A healthcare welfare web application I built with MEARN stack, providing a modern and responsive online medical consultation and appointment booking experience.',
+    link:'https://sehatkor.pk' },
   { id: 2,
+    title: 'KCD-Notify',
+    img: kcd, desc: 'A student result notification web application I built with MEARN stack, providing a modern and responsive real-time result alerts and notification experience.',
+    link:'https://kcd-notify-5jq3.vercel.app/' },
+  { id: 23,
     title: ' Disney+ Replica',
     img: proj22, desc: ' React-based web application replicating the Disney+ user interface with dynamic content and responsive design.',
     link:'https://disney-replica-gzkf.vercel.app/' },
@@ -32,6 +38,10 @@ const items = [
     title: 'FYP',
     img: proj66, desc: 'The FYP-IntraChat project is a real-time web chat application we designed for intra-departmental communication, built with React, Node.js, WebSocket, and MongoDB for seamless messaging and user management.',
     link:'https://fyp-intra-chat.vercel.app/' },
+    { id: 7,
+      title: 'Shop',
+      img: proj11, desc: ' an e-commerce web application I built with React, providing a modern and responsive online shopping experience.',
+      link:'https://dukaan-henna.vercel.app/' }
 ];
 
 const Single = ({ item }) => {
