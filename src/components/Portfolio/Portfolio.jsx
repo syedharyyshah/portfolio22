@@ -102,6 +102,7 @@ const Portfolio = () => {
       {items.map((item) => (
         <Single item={item} key={item.id} />
       ))}
+      
     </div>
   );
 };
