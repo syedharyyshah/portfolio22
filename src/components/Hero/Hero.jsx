@@ -7,24 +7,24 @@ import cv from "../../assets/Syed Haris Shah CV.pdf";
 
 const textVariants = {
   initial: {
-    x: -500,
+    x: -50,
     opacity: 0,
   },
   animate: {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.1,
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1], // smooth cubic-bezier
+      staggerChildren: 0.12,
     },
   },
   scrollButton: {
-    opacity: 0,
-    y: 10,
+    y: [0, 12, 0],
     transition: {
-      duration: 2,
+      duration: 1.5,
       repeat: Infinity,
-      repeatType: 'reverse',
+      ease: "easeInOut",
     },
   },
 };
